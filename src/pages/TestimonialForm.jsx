@@ -87,7 +87,7 @@ const TestimonialForm = () => {
           <FaStar className={`star-icon ${star <= (hover || formData.rating) ? "star-filled" : "star-empty"}`} />
         </button>
       ))}
-      {formData.rating > 0 && <span className="rating-text">{formData.rating} out of 5 stars</span>}
+      {/* {formData.rating > 0 && <span className="rating-text">{formData.rating} out of 5 stars</span>} */}
     </div>
   )
 
@@ -117,7 +117,7 @@ const TestimonialForm = () => {
                         <div className="form-group">
                           <label htmlFor="fullName" className="form-label">
                             <FaUser />
-                            Full Name *
+                            Full Name <span className="text-danger">*</span>
                           </label>
                           <input
                             id="fullName"
@@ -133,7 +133,7 @@ const TestimonialForm = () => {
                         <div className="form-group">
                           <label htmlFor="company" className="form-label">
                             <FaBuilding />
-                            Company / Role *
+                            Company / Role <span className="text-danger">*</span>
                           </label>
                           <input
                             id="company"
@@ -171,7 +171,7 @@ const TestimonialForm = () => {
                       <div className="form-group">
                         <label htmlFor="testimonial" className="form-label">
                           <FaCommentDots />
-                          Your Testimonial *
+                          Your Testimonial <span className="text-danger">*</span>
                         </label>
                         <textarea
                           id="testimonial"

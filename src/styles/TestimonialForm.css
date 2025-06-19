@@ -33,7 +33,7 @@
 
 .testimonial-header {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 0.5rem;
   padding-bottom: 2rem;
 }
 
@@ -75,9 +75,6 @@
   line-height: 1.75;
 }
 
-.testimonial-content {
-  padding: 0 1.5rem 2rem;
-}
 
 .testimonial-form {
   background: rgba(255, 255, 255, 0.95);
@@ -187,6 +184,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .form-label svg {
