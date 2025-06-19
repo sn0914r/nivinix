@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import "../styles/contactUs.css";
+import "../styles/ContactUs.css";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
