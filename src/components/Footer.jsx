@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FiFacebook, FiTwitter, FiLinkedin, FiInstagram } from 'react-icons/fi';
-import '../styles/footer.css';
+import '../styles/Footer.css';
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
