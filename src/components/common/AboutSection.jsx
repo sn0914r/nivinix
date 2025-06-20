@@ -13,18 +13,18 @@ const AboutSection = () => {
     { icon: <FiAward />, number: "5+", label: "Years Experience" },
   ];
 
-  const skills = [
-    { name: "HTML", icon: "🌐" },
-    { name: "CSS", icon: "🎨" },
-    { name: "JavaScript", icon: "⚡" },
-    { name: "React", icon: "⚛️" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Firebase", icon: "🔥" },
-    { name: "Bootstrap", icon: "🅱️" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "Express", icon: "🚀" },
-    { name: "Git", icon: "📝" },
-  ];
+  // const skills = [
+  //   { name: "HTML", icon: "🌐" },
+  //   { name: "CSS", icon: "🎨" },
+  //   { name: "JavaScript", icon: "⚡" },
+  //   { name: "React", icon: "⚛️" },
+  //   { name: "Node.js", icon: "🟢" },
+  //   { name: "Firebase", icon: "🔥" },
+  //   { name: "Bootstrap", icon: "🅱️" },
+  //   { name: "MongoDB", icon: "🍃" },
+  //   { name: "Express", icon: "🚀" },
+  //   { name: "Git", icon: "📝" },
+  // ];
 
   const developers = [
     {
@@ -32,7 +32,12 @@ const AboutSection = () => {
       role: "Front End Developer",
       avatar: "S",
       bio: "Building modern web apps with React and Firebase. Passionate about creating digital experiences that last.",
-      skills: ["HTML", "CSS", "JavaScript", "React"],
+      skills: [
+        { name: "HTML", icon: "🌐" },
+        { name: "CSS", icon: "🎨" },
+        { name: "JavaScript", icon: "⚡" },
+        { name: "React", icon: "⚛️" },
+      ],
       socialLinks: [
         {
           icon: <FaGithub />,
@@ -56,7 +61,13 @@ const AboutSection = () => {
       role: "UI/UX Designer",
       avatar: "V",
       bio: "Crafting beautiful and intuitive user interfaces. Specializing in modern design systems and user experience optimization.",
-      skills: ["HTML", "CSS", "JavaScript", "Figma"],
+      skills: [
+        { name: "HTML", icon: "🌐" },
+        { name: "CSS", icon: "🎨" },
+        { name: "JavaScript", icon: "⚡" },
+        { name: "Bootstrap", icon: "🅱️" },
+        { name: "Figma", icon: "🎨"}
+      ],
       socialLinks: [
         {
           icon: <FaGithub />,
@@ -74,26 +85,30 @@ const AboutSection = () => {
           label: "Portfolio",
         },
       ],
-    }
+    },
   ];
 
   useEffect(() => {
-    const skillsContainer = skillsRef.current;
-    if (!skillsContainer) return;
-
-    let scrollAmount = 0;
+    const containers = document.querySelectorAll(".skills-container.about-us");
     const scrollSpeed = 1;
-    const maxScroll = skillsContainer.scrollWidth - skillsContainer.clientWidth;
 
-    const autoScroll = () => {
-      scrollAmount += scrollSpeed;
-      if (scrollAmount >= maxScroll) {
-        scrollAmount = 0;
-      }
-      skillsContainer.scrollLeft = scrollAmount;
-    };
+    // Keep references to scroll positions per container
+    const scrollStates = Array.from(containers).map(() => ({
+      scrollAmount: 0,
+    }));
 
-    const interval = setInterval(autoScroll, 50);
+    const interval = setInterval(() => {
+      containers.forEach((container, index) => {
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        scrollStates[index].scrollAmount += scrollSpeed;
+
+        if (scrollStates[index].scrollAmount >= maxScroll) {
+          scrollStates[index].scrollAmount = 0;
+        }
+
+        container.scrollLeft = scrollStates[index].scrollAmount;
+      });
+    }, 50);
 
     return () => clearInterval(interval);
   }, []);
@@ -140,7 +155,7 @@ const AboutSection = () => {
           </Col>
           <Col lg={6}>
             <div className="developers-section">
-            <h3 className="h2 mb-4 text-center">Our Developers</h3>
+              <h3 className="h2 mb-4 text-center">Our Developers</h3>
               <div className="developers-grid">
                 {developers.map((developer, index) => (
                   <div key={index} className="developer-card">
@@ -159,12 +174,15 @@ const AboutSection = () => {
                     {
                       <div className="skills-section">
                         <h6 className="skills-title">Skills</h6>
-                        <div className="skills-container" ref={skillsRef}>
-                          {[...developer.skills, ...developer.skills].map((skill, skillIndex) => (
-                            <div key={skillIndex} className="skill-item">
-                              <span className="skill-name">{skill}</span>
-                            </div>
-                          ))}
+                        <div className="skills-container about-us">
+                          {[...developer.skills, ...developer.skills].map(
+                            (skill, skillIndex) => (
+                              <div key={skillIndex} className="skill-item">
+                                <span className="skill-icon">{skill.icon}</span>
+                                <span className="skill-name">{skill.name}</span>
+                              </div>
+                            )
+                          )}
                         </div>
                       </div>
                     }
