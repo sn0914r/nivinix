@@ -1,8 +1,15 @@
-import React from 'react';
+// import { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FiCode, FiSmartphone, FiShoppingCart, FiSearch, FiLayers, FiSettings } from 'react-icons/fi';
+import { db } from "../../firebase/firebaseConfig.js";
 
 const ServicesSection = () => {
+  // const [services, setServices] = useState([]);
+
+  // useEffect(()=>{
+
+  // })
+
   const services = [
     {
       icon: <FiCode />,

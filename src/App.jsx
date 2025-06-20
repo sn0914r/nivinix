@@ -7,6 +7,8 @@ import TestimonialForm from "./pages/common/TestimonialForm";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import TestimonialsPageAdmin from "./pages/admin/TestimonialPage";
 import MessageDashboardAdmin from "./pages/admin/messages/MessageDashboard";
+import DeveloperDashboard from "./pages/admin/DeveloperDashboard";
+
 function App() {
   return (
     <Routes>
@@ -17,6 +19,9 @@ function App() {
       
       <Route path="/admin-dashboard/testimonials" element={<TestimonialsPageAdmin/>}/>
       <Route path="/admin-dashboard/messages" element={<MessageDashboardAdmin/>}/>
+      <Route path="/admin-dashboard/developers" element={<DeveloperDashboard/>}/>
+
+
     </Routes>
   )
 }
