@@ -71,17 +71,17 @@ const AboutSection = () => {
       socialLinks: [
         {
           icon: <FaGithub />,
-          url: "https://github.com/sarah",
+          url: "#",
           label: "GitHub",
         },
         {
           icon: <FaLinkedin />,
-          url: "https://linkedin.com/in/sarah",
+          url: "#",
           label: "LinkedIn",
         },
         {
           icon: <FiGlobe />,
-          url: "https://sarah-designs.com",
+          url: "#",
           label: "Portfolio",
         },
       ],
