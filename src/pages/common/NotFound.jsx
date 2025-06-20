@@ -3,7 +3,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../styles/NotFound.css";
+import "../../styles/pages/common/NotFound.css";
 
 const NotFound = () => {
   return (

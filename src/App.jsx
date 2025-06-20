@@ -1,10 +1,12 @@
-import LandingPage from "./pages/LandingPage";
-import TestimonialForm from "./pages/TestimonialForm";
-import NotFound from "./pages/NotFound";
-
 import { Route, Routes } from "react-router-dom";
-import AdminDashboard from "./pages/AdminDashboard";
-import TestimonialsPageAdmin from "./Admin/Testimonials";
+
+import LandingPage from "./pages/common/LandingPage";
+import NotFound from "./pages/common/NotFound";
+import TestimonialForm from "./pages/common/TestimonialForm";
+
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import TestimonialsPageAdmin from "./pages/admin/TestimonialPage";
+import MessageDashboardAdmin from "./pages/admin/messages/MessageDashboard";
 function App() {
   return (
     <Routes>
@@ -14,6 +16,7 @@ function App() {
       <Route path="/admin-dashboard" element={<AdminDashboard/>}/>
       
       <Route path="/admin-dashboard/testimonials" element={<TestimonialsPageAdmin/>}/>
+      <Route path="/admin-dashboard/messages" element={<MessageDashboardAdmin/>}/>
     </Routes>
   )
 }

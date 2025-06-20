@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import "../styles/Testimonials.css"
+import "../../styles/components/common/Testimonials.css";
 
 const TestimonialsSection = () => {
   const testimonials = [

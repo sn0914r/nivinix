@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/Hero.css"
+import "../../styles/components/common/Hero.css";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId) => {

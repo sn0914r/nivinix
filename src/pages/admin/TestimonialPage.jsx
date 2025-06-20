@@ -11,7 +11,7 @@ import {
   FaCommentDots,
   FaCheck,
 } from "react-icons/fa";
-import "../styles/AdminTestimonials.css";
+import "../../styles/pages/admin/TestimonialsPage.css"
 import { Link } from "react-router-dom";
 
 const TestimonialsPage = () => {

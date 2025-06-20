@@ -9,7 +9,7 @@ import {
   FaEllipsisH,
   FaArrowRight,
 } from "react-icons/fa";
-import "../styles/AdminDashboard.css";
+import "../../styles/pages/admin/AdminDashboard.css"
 import { Link } from "react-router-dom";
 
 const AdminDashboard = () => {
@@ -21,6 +21,7 @@ const AdminDashboard = () => {
         "Manage customer testimonials, reviews, and feedback from clients.",
       icon: <FaCommentDots />,
       className: "card-testimonials",
+      route: "testimonials"
     },
     {
       id: "messages",
@@ -31,6 +32,7 @@ const AdminDashboard = () => {
       className: "card-messages",
       hasNotification: true,
       notificationCount: 12,
+      route: "messages"
     },
     {
       id: "portfolio",
@@ -39,6 +41,7 @@ const AdminDashboard = () => {
         "Manage portfolio projects, case studies, and showcase work samples.",
       icon: <FaBriefcase />,
       className: "card-portfolio",
+      route: "portifolio"
     },
     {
       id: "services",
@@ -47,6 +50,7 @@ const AdminDashboard = () => {
         "Update service offerings, pricing, packages, and service descriptions.",
       icon: <FaCogs />,
       className: "card-services",
+      route: "services"
     },
     {
       id: "developers",
@@ -55,6 +59,7 @@ const AdminDashboard = () => {
         "Manage team members, developer profiles, skills, and availability.",
       icon: <FaUsers />,
       className: "card-developers",
+      route: "developers"
     },
     {
       id: "others",
@@ -63,6 +68,7 @@ const AdminDashboard = () => {
         "Additional settings, configurations, and miscellaneous management options.",
       icon: <FaEllipsisH />,
       className: "card-others",
+      route: "others"
     },
   ];
 
@@ -102,7 +108,7 @@ const AdminDashboard = () => {
                     <p className="card-description">{card.description}</p>
 
                     <Link
-                      to="/admin-dashboard/testimonials"
+                      to={`/admin-dashboard/${card.route}`}
                       className="manage-button text-decoration-none"
                     >
                       <span>Manage</span>

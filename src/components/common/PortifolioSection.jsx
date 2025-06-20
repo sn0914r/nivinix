@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import "../styles/PortifolioSection.css"
+import "../../styles/components/common/PortifolioSection.css";
 
 const PortfolioSection = () => {
   const portfolioItems = [

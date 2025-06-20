@@ -1,8 +1,6 @@
-"use client"
-
 import { useState } from "react"
 import { FaStar, FaUpload, FaUser, FaBuilding, FaEnvelope, FaCommentDots, FaCamera } from "react-icons/fa"
-import "../styles/TestimonialForm.css"
+import "../../styles/pages/common/TestimonialForm.css"
 
 const TestimonialForm = () => {
   const [formData, setFormData] = useState({

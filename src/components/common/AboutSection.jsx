@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FiTarget, FiUsers, FiAward, FiGlobe } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import "../styles/AboutSection.css";
+import "../../styles/components/common/AboutSection.css";
 
 const AboutSection = () => {
   const skillsRef = useRef(null);
@@ -28,33 +28,35 @@ const AboutSection = () => {
 
   const developers = [
     {
-      name: "Ramesh D.",
-      role: "Full Stack Developer",
-      avatar: "R",
+      name: "Sivananda Reddy",
+      role: "Front End Developer",
+      avatar: "S",
       bio: "Building modern web apps with React and Firebase. Passionate about creating digital experiences that last.",
+      skills: ["HTML", "CSS", "JavaScript", "React"],
       socialLinks: [
         {
           icon: <FaGithub />,
-          url: "https://github.com/ramesh",
+          url: "https://github.com/sn0914r",
           label: "GitHub",
         },
         {
           icon: <FaLinkedin />,
-          url: "https://linkedin.com/in/ramesh",
+          url: "#",
           label: "LinkedIn",
         },
         {
           icon: <FiGlobe />,
-          url: "https://ramesh-portfolio.com",
+          url: "#",
           label: "Portfolio",
         },
       ],
     },
     {
-      name: "Sarah M.",
+      name: "Vinod Kumar",
       role: "UI/UX Designer",
-      avatar: "S",
+      avatar: "V",
       bio: "Crafting beautiful and intuitive user interfaces. Specializing in modern design systems and user experience optimization.",
+      skills: ["HTML", "CSS", "JavaScript", "Figma"],
       socialLinks: [
         {
           icon: <FaGithub />,
@@ -72,41 +74,7 @@ const AboutSection = () => {
           label: "Portfolio",
         },
       ],
-    },
-    {
-      name: "Alex K.",
-      role: "Backend Developer",
-      avatar: "A",
-      bio: "Expert in Node.js and cloud architecture. Building scalable APIs and microservices for enterprise applications.",
-      socialLinks: [
-        { icon: <FaGithub />, url: "https://github.com/alex", label: "GitHub" },
-        {
-          icon: <FaLinkedin />,
-          url: "https://linkedin.com/in/alex",
-          label: "LinkedIn",
-        },
-        { icon: <FiGlobe />, url: "https://alex-dev.com", label: "Portfolio" },
-      ],
-    },
-    {
-      name: "Maya P.",
-      role: "Frontend Developer",
-      avatar: "M",
-      bio: "React and Vue.js enthusiast. Creating responsive and performant web applications with modern JavaScript frameworks.",
-      socialLinks: [
-        { icon: <FaGithub />, url: "https://github.com/maya", label: "GitHub" },
-        {
-          icon: <FaLinkedin />,
-          url: "https://linkedin.com/in/maya",
-          label: "LinkedIn",
-        },
-        {
-          icon: <FiGlobe />,
-          url: "https://maya-frontend.com",
-          label: "Portfolio",
-        },
-      ],
-    },
+    }
   ];
 
   useEffect(() => {
@@ -188,19 +156,18 @@ const AboutSection = () => {
                       <p>{developer.bio}</p>
                     </div>
 
-                    {index === 0 && (
+                    {
                       <div className="skills-section">
                         <h6 className="skills-title">Skills</h6>
                         <div className="skills-container" ref={skillsRef}>
-                          {[...skills, ...skills].map((skill, skillIndex) => (
+                          {[...developer.skills, ...developer.skills].map((skill, skillIndex) => (
                             <div key={skillIndex} className="skill-item">
-                              <span className="skill-icon">{skill.icon}</span>
-                              <span className="skill-name">{skill.name}</span>
+                              <span className="skill-name">{skill}</span>
                             </div>
                           ))}
                         </div>
                       </div>
-                    )}
+                    }
 
                     <div className="social-links-section">
                       <div className="developer-social-links">

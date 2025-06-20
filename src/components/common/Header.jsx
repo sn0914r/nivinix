@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import '../styles/Header.css'; 
+import "../../styles/components/common/Header.css";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
