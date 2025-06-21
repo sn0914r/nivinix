@@ -15,7 +15,7 @@ export default function LandingPage() {
             <AboutSection/>
             <ServicesSection/>
             <PortfolioSection/>
-            <TestimonialsSection/>
+            {/* <TestimonialsSection/> */}
             <ContactSection/>
             <Footer/>
         </>

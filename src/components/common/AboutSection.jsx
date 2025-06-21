@@ -118,7 +118,7 @@ const AboutSection = () => {
       <Container>
         <Row>
           <Col xs={12}>
-            <h2 className="section-title text-center mb-5">About Nivix</h2>
+            <h1 className="section-title text-center mb-5 fs-1">About Nivinex</h1>
           </Col>
         </Row>
         <Row className="align-items-center">
@@ -137,7 +137,7 @@ const AboutSection = () => {
                 project is built for success, scalability, and outstanding
                 performance.
               </p>
-              <Row>
+              <Row className="d-none" >
                 {stats.map((stat, index) => (
                   <Col key={index} xs={4} className="text-center">
                     <div className="service-icon mb-3">{stat.icon}</div>

@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { FaStar, FaUpload, FaUser, FaBuilding, FaEnvelope, FaCommentDots, FaCamera } from "react-icons/fa"
-import "../../styles/pages/common/TestimonialForm.css"
+import "../../styles/pages/common/TestimonialForm.css";
+import { db } from "../../firebase/firebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
 
 const TestimonialForm = () => {
   const [formData, setFormData] = useState({
@@ -20,12 +22,17 @@ const TestimonialForm = () => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try{
+      await addDoc(collection(db, "testimonials"), formData);
+    }catch(error){
+      console.log(`Error: ${error}`);
+    }
 
     alert("Thank you for your feedback!")
     setIsSubmitting(false)
@@ -192,7 +199,7 @@ const TestimonialForm = () => {
                     </div>
 
                     {/* Profile Photo Upload */}
-                    <div className="upload-section">
+                    <div className="upload-section d-none">
                       <label className="form-label">
                         <FaCamera />
                         Profile Photo (optional)

@@ -34,10 +34,12 @@ const Header = () => {
           <Row className="align-items-center py-3">
             <Col xs={6} md={3}>
               <div 
-                className="logo"
+                className="logo rounded-circle d-flex gap-1"
                 onClick={() => scrollToSection('home')}
+                style={{width: "50px", aspectRatio: "1"}}
               >
-                Nivix
+                <img src="assets/images/nivinix_logo_header.jpg" alt="logo" className="w-100 h-100 object-fit-contain rounded-circle"/>
+                <span className="d-none d-lg-block">Nivinex</span>
               </div>
             </Col>
             <Col xs={6} md={9} className="text-end">
@@ -78,7 +80,7 @@ const Header = () => {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
         <div className="mobile-menu-header d-flex justify-content-between align-items-center px-3 py-2">
-          <div className="logo">Nivix</div>
+          <div className="logo">Nivinex</div>
           <Button
             variant="link"
             className="close-btn"

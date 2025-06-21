@@ -18,7 +18,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col lg={4} className="mb-4 mb-lg-0">
-            <div className="footer-logo">Nivix</div>
+            <div className="footer-logo">Nivinex</div>
             <p className="mb-4">
                 We design and develop powerful web apps that are fast, functional, and future-ready.
             </p>
@@ -70,8 +70,8 @@ const Footer = () => {
           <Col lg={3} md={12}>
             <h5 className="text-white mb-3">Contact Info</h5>
             <ul className="list-unstyled">
-              <li><span className="text-light">vscodevinod123@gmail.com</span></li>
-              <li><span className="text-light">9999999999</span></li>
+              <li><span className="text-light">vinod93810@gmail.com</span></li>
+              {/* <li><span className="text-light">9999999999</span></li> */}
             </ul>
           </Col>
         </Row>
